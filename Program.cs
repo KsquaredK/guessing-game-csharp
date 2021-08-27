@@ -12,7 +12,8 @@ namespace Guessing_Game
         {
             // Phase 1
 
-            //* 2.1. Create a variable to contain the secret number. This number should be hard-coded for now. 42 is a nice number.
+            //* 2.1. Create a variable to contain the secret number. 
+            // 5.1. Use a random number to set the secret number between 1 and 100 instead of a hard-coded number.
             Random random = new Random();
             int secretNumber = random.Next(1, 101);
             // The program should...
@@ -64,7 +65,6 @@ namespace Guessing_Game
 
 // The program should be updated to...
 
-// 1. Use a random number to set the secret number between 1 and 100 instead of a hard-coded number.
 
 // Phase 6
 
