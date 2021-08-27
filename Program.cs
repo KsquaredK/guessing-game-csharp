@@ -13,7 +13,8 @@ namespace Guessing_Game
             // Phase 1
 
             //* 2.1. Create a variable to contain the secret number. This number should be hard-coded for now. 42 is a nice number.
-            int secretNumber = new Random.Next();
+            Random random = new Random();
+            int secretNumber = random.Next(1, 101);
             // The program should...
             // 1.1 Display a message to the user asking them to guess the secret number.
             Console.WriteLine("Can you guess the secret number?");
@@ -22,12 +23,12 @@ namespace Guessing_Game
             Console.WriteLine("Your guess: ");
             // 3.1. Give the user four chances to guess the number.
             // 3.2. Continue to display the success or failure messages as in phase 2
-            for (int i = 0; i < 4; i++)
+            for (int i = 5; i > 0; i--)
             {
                 // 1.3 Take the user's guess as input and save it as a variable.
                 var guess = Console.ReadLine();
                 // 4.1. Display the number of the user's current guess in the prompt. For example, if the user has already guessed one time, the prommpt should say something like Your guess (2)>.
-                Console.WriteLine($"You guessed {guess}...")
+                Console.WriteLine($"You guessed {guess}...");
                 // 2.2 No longer display the user's guess. They know what they guessed, right?
                 // 2.3 Compare the user's guess with the secret number. Display a success message if the guess is correct, otherwise display a failure message.
                 int parsedGuess = int.Parse(guess);
@@ -40,7 +41,7 @@ namespace Guessing_Game
                 }
                 else if (parsedGuess < secretNumber)
                 {
-                    Console.WriteLine("Too low! Try again.");
+                    Console.WriteLine("Too low! Try again - guesses left: {i}.");
                 }
                 else if (parsedGuess > secretNumber)
                 {
