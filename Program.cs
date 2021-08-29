@@ -21,18 +21,20 @@ namespace GuessingGame
 
             var input = Console.ReadLine();
             int userLevel = (int.Parse(input) - 1);
-
             int[] challengeLevels = { 8, 6, 4 };
-
-
-            // find a ternary? if userLevel[3], endless guesses, else original game/while loop
-            if
-            {
-                int guessesLeft = challengeLevels[userLevel];
-            }
-            else if
+            int guessesLeft = 0;
 
             Console.WriteLine("First guess? ");
+
+            if (userLevel == 3)
+            {
+                guessesLeft = Int32.MaxValue;
+            }
+            else
+            {
+                guessesLeft = challengeLevels[userLevel];
+            }
+
             while (guessesLeft > 0)
             {
 
@@ -61,10 +63,6 @@ namespace GuessingGame
     }
 
 }
-
-// 1. Add a difficulty level of "Cheater" which will cause the program to continue prompting the user until they get the answer correct.
-//     }
-// }
 
 
 
